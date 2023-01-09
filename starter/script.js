@@ -139,16 +139,18 @@ let variableNames=[
   "special characters"
 ]
 
-function getRandom(arr) {
+function getRandom() {
 for (let i=0; i<variableNames.length; i++) {
 var userChoice= prompt("Would you like your password to contain characters from " + variableNames[i] + "?")
+if (userChoice=="yes") {
+alert("You have selected to include " + variableNames[i]+ ".")
+} if (userChoice!="yes") {
+alert("You have selected not to include " + variableNames[i] + ".")
+}
 }
 }
 
-getRandom(lowerCasedCharacters);
-getRandom(upperCasedCharacters);
-getRandom(numericCharacters);
-getRandom(specialCharacters);
+getRandom();
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
