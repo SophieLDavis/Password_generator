@@ -127,6 +127,28 @@ return;
 getPasswordOptions();
 
 
+//prompt 2-> Choose to include 1, 2, 3 or 4 (all) character types in password 
+//math.random-> specialCharacters , numericCharacters , lowerCasedCharacters , upperCasedCharacters
+
+// Function for getting a random element from an array
+
+let variableNames=[
+  "lowercase characters",
+  "uppercase characters",
+  "numeric characters",
+  "special characters"
+]
+
+function getRandom(arr) {
+for (let i=0; i<variableNames.length; i++) {
+var userChoice= prompt("Would you like your password to contain characters from " + variableNames[i] + "?")
+}
+}
+
+getRandom(lowerCasedCharacters);
+getRandom(upperCasedCharacters);
+getRandom(numericCharacters);
+getRandom(specialCharacters);
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
