@@ -139,22 +139,22 @@ let variableNames=[
   ["numeric characters", numericCharacters],
   ["special characters", specialCharacters]
 ]
-
+var randomChoice= []
 function getRandom() {
-for (let i=0; i<variableNames.length; i++) {
-var userChoice= prompt("Would you like your password to contain characters from " + variableNames[i][0] + "?")
+for (let i=0; i<4; i++) {
+var userChoice= prompt("Would you like your password to contain characters from " + variableNames[i][0] + "? Please answer 'yes' to confirm yes.")
 if (userChoice=="yes") {
 alert("You have selected to include " + variableNames[i][0]+ ".")
-var randomChoice= variableNames[i][1][Math.floor(Math.random()*variableNames.length)]
-console.log(randomChoice)
+randomChoice.push(variableNames[i][1][Math.floor(Math.random()*variableNames.length)])
 } if (userChoice!="yes") {
 alert("You have selected not to include " + variableNames[i][0] + ".")
 }
 }
 }
-
 getRandom();
-
+console.log(randomChoice)
+// how do i store the results of each for loop? randomChoice gets overwritten every time.. ?
+// how do i get the password to equal the length the user selects?
 
 //var randomItem = myArray[Math.floor(Math.random()*myArray.length)]
 // Get references to the #generate element
