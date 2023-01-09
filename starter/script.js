@@ -122,6 +122,7 @@ return ;
 alert("Please choose a shorter password.")
 return;
 }
+console.log(passWordLength)
 };
 
 getPasswordOptions();
@@ -133,25 +134,29 @@ getPasswordOptions();
 // Function for getting a random element from an array
 
 let variableNames=[
-  "lowercase characters",
-  "uppercase characters",
-  "numeric characters",
-  "special characters"
+  ["lowercase characters", lowerCasedCharacters],
+  ["uppercase characters", upperCasedCharacters],
+  ["numeric characters", numericCharacters],
+  ["special characters", specialCharacters]
 ]
 
 function getRandom() {
 for (let i=0; i<variableNames.length; i++) {
-var userChoice= prompt("Would you like your password to contain characters from " + variableNames[i] + "?")
+var userChoice= prompt("Would you like your password to contain characters from " + variableNames[i][0] + "?")
 if (userChoice=="yes") {
-alert("You have selected to include " + variableNames[i]+ ".")
+alert("You have selected to include " + variableNames[i][0]+ ".")
+var randomChoice= variableNames[i][1][Math.floor(Math.random()*variableNames.length)]
+console.log(randomChoice)
 } if (userChoice!="yes") {
-alert("You have selected not to include " + variableNames[i] + ".")
+alert("You have selected not to include " + variableNames[i][0] + ".")
 }
 }
 }
 
 getRandom();
 
+
+//var randomItem = myArray[Math.floor(Math.random()*myArray.length)]
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
