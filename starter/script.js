@@ -88,30 +88,6 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-
-
-
-/*/Generate a password when the button is clicked
-* Present a series of prompts for password criteria
-  * Length of password
-    * At least 10 characters but no more than 64
-  * Character types
-    * Lowercase
-    * Uppercase
-    * Numeric
-    * Special characters ($@%&*, etc)
-* Code should validate for each input and at least one character type should be selected
-* Once prompts are answered then the password should be generated and displayed in an alert or written to the page
-/*/
-
-
-//prompt one-> Produce a password between 10-64 inclusive 
-//function if element is less than <10, return error
-//.. else if function if more than >64, return error
-//..else continue to next prompt 
-
-// Function to prompt user for password options
-
 var passWordLength=0
 function getPasswordOptions() {
 passWordLength=prompt("Please choose a password length between 10 and 64 characters.")
@@ -124,15 +100,6 @@ return;
 }
 console.log("Password length is " + passWordLength)
 };
-
-getPasswordOptions();
-
-
-
-//prompt 2-> Choose to include 1, 2, 3 or 4 (all) character types in password 
-//math.random-> specialCharacters , numericCharacters , lowerCasedCharacters , upperCasedCharacters
-
-// Function for getting a random element from an array
 
 let variableNames=[
   ["lowercase characters", lowerCasedCharacters],
@@ -158,10 +125,7 @@ false)
 }
 }
 }
-getRandom();
 
-// how do i store the results of each for loop? randomChoice gets overwritten every time.. ?
-// how do i get the password to equal the length the user selects?
 var randomPassword=[]
 function generatePassword() {
 for (i=0; i<65; i++) {
@@ -185,7 +149,9 @@ break
 }
 }
 
-  generatePassword()
+getPasswordOptions();
+getRandom();
+generatePassword()
 
 
 // Get references to the #generate element
