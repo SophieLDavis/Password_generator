@@ -75,6 +75,15 @@ You are required to submit the following for review:
 * The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
 
 ---
+# Javascript Challenge
+
+## Description
+In this challenge, the take is to write Javascript code to analyse the financial records of a company with the dataset provided. 
+
+![Screenshot1](..)
+
+The application can be viewed at https://sophieldavis.github.io/Console-Finances/.
+
 
 © 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
 

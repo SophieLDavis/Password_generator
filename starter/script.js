@@ -112,9 +112,9 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 
-
+var passWordLength=0
 function getPasswordOptions() {
-var passWordLength=prompt("Please choose a password length between 10 and 64 characters.")
+passWordLength=prompt("Please choose a password length between 10 and 64 characters.")
 if (passWordLength<10) {
 alert("Please choose a longer password.")
 return ;
@@ -122,10 +122,11 @@ return ;
 alert("Please choose a shorter password.")
 return;
 }
-console.log(passWordLength)
+console.log("Password length is " + passWordLength)
 };
 
 getPasswordOptions();
+
 
 
 //prompt 2-> Choose to include 1, 2, 3 or 4 (all) character types in password 
@@ -140,23 +141,53 @@ let variableNames=[
   ["special characters", specialCharacters]
 ]
 var randomChoice= []
+var userYes=[]
 function getRandom() {
 for (let i=0; i<4; i++) {
 var userChoice= prompt("Would you like your password to contain characters from " + variableNames[i][0] + "? Please answer 'yes' to confirm yes.")
 if (userChoice=="yes") {
 alert("You have selected to include " + variableNames[i][0]+ ".")
-randomChoice.push(variableNames[i][1][Math.floor(Math.random()*variableNames.length)])
+userYes.push(true)
+console.log("Has " + variableNames[i][0] + " been selected by user? " +
+true)
 } if (userChoice!="yes") {
 alert("You have selected not to include " + variableNames[i][0] + ".")
+userYes.push(false)
+console.log("Has " + variableNames[i][0] + " been selected by user? " +
+false)
 }
 }
 }
 getRandom();
-console.log(randomChoice)
+
 // how do i store the results of each for loop? randomChoice gets overwritten every time.. ?
 // how do i get the password to equal the length the user selects?
+var randomPassword=[]
+function generatePassword() {
+for (i=0; i<65; i++) {
+if (userYes[i]==true) {
+  randomPassword.push(lowerCasedCharacters[Math.floor(Math.random()*lowerCasedCharacters.length)])
+}
+if (userYes[i]==true) {
+  randomPassword.push(upperCasedCharacters[Math.floor(Math.random()*upperCasedCharacters.length)])
+}
+if (userYes[i]==true) {
+  randomPassword.push(numericCharacters[Math.floor(Math.random()*numericCharacters.length)])  
+}
+if (userYes[i]==true) {
+  randomPassword.push(specialCharacters[Math.floor(Math.random()*specialCharacters.length)])
+}
+else if (passWordLength==randomPassword.length) {
+alert("Your random password is:   " + randomPassword)
+console.log("Your random password is:   " + randomPassword)  
+break
+}
+}
+}
 
-//var randomItem = myArray[Math.floor(Math.random()*myArray.length)]
+  generatePassword()
+
+
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
 
