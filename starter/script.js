@@ -141,19 +141,13 @@ if (userYes[i]==true) {
 if (userYes[i]==true) {
   randomPassword.push(specialCharacters[Math.floor(Math.random()*specialCharacters.length)])
 }
-else if (passWordLength==randomPassword.length) {
+else if (passWordLength===randomPassword.length) {
 alert("Your random password is:   " + randomPassword)
 console.log("Your random password is:   " + randomPassword)  
 break
 }
 }
 }
-
-
-//getPasswordOptions();
-//getRandom();
-//generatePassword()
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
