@@ -124,10 +124,10 @@ console.log("Has " + variableNames[i][0] + " been selected by user? " +
 false)
 }
 }
-}
+} 
 
 var randomPassword=[]
-function generatePassword() {
+function generateAPassword() {
 for (i=0; i<65; i++) {
 if (userYes[i]==true) {
   randomPassword.push(lowerCasedCharacters[Math.floor(Math.random()*lowerCasedCharacters.length)])
@@ -149,9 +149,10 @@ break
 }
 }
 
-getPasswordOptions();
-getRandom();
-generatePassword()
+
+//getPasswordOptions();
+//getRandom();
+//generatePassword()
 
 
 // Get references to the #generate element
@@ -159,11 +160,23 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+ //var password = generatePassword();
   var passwordText = document.querySelector('#password');
 
-  passwordText.value = password;
+  passwordText.value = randomPassword;
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
+generateBtn.addEventListener(
+  'click', getPasswordOptions, 
+);
+generateBtn.addEventListener(
+  'click', getRandom
+);
+
+generateBtn.addEventListener(
+  'click', generateAPassword
+);
+generateBtn.addEventListener(
+  'click', writePassword
+);
