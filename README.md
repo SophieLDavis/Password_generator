@@ -2,7 +2,7 @@
 
 ## Description
 
-The password generator is an application that an employee can use to generate a random password, based on criteria they’ve selected. 
+The password generator is an application that can be used to generate a random password, based on criteria they’ve selected. 
 
 The application is required to:
 * Generate a password when the button is clicked
