@@ -88,15 +88,16 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+//Prompt for password length
 var passWordLength=0
 function getPasswordOptions() {
 passWordLength=prompt("Please choose a password length between 10 and 64 characters.")
 if (passWordLength<10) {
 alert("Please choose a longer password.")
-return ;
+return prompt;
 } if (passWordLength>64) {
 alert("Please choose a shorter password.")
-return;
+return prompt;
 }
 console.log("Password length is " + passWordLength)
 };
@@ -107,41 +108,51 @@ let variableNames=[
   ["numeric characters", numericCharacters],
   ["special characters", specialCharacters]
 ]
+
+let userYes= [
+  ["lowercase characters"],
+  ["uppercase characters"],
+  ["numeric characters"],
+  ["special characters"]
+]
+
+//Prompt for yes/ no to character types from the 4 options
 var randomChoice= []
-var userYes=[]
+//var userYes=[]
 function getRandom() {
 for (let i=0; i<4; i++) {
-var userChoice= prompt("Would you like your password to contain characters from " + variableNames[i][0] + "? Please answer 'yes' to confirm yes.")
+var userChoice= prompt("Would you like your password to contain characters from " + variableNames[i][0] + "? Please answer 'yes' to confirm yes. All other inputs will answer 'no'.")
 if (userChoice=="yes") {
 alert("You have selected to include " + variableNames[i][0]+ ".")
-userYes.push(true)
+userYes[i].push(true)
 console.log("Has " + variableNames[i][0] + " been selected by user? " +
 true)
 } if (userChoice!="yes") {
 alert("You have selected not to include " + variableNames[i][0] + ".")
-userYes.push(false)
+userYes[i].push(false)
 console.log("Has " + variableNames[i][0] + " been selected by user? " +
 false)
 }
 }
 } 
 
+//Prompt to generate a random character from each character type array.
 var randomPassword=[]
 function generateAPassword() {
 for (i=0; i<65; i++) {
-if (userYes[i]==true) {
+if (userYes[0][i]==true) {
   randomPassword.push(lowerCasedCharacters[Math.floor(Math.random()*lowerCasedCharacters.length)])
 }
-if (userYes[i]==true) {
+if (userYes[1][i]==true) {
   randomPassword.push(upperCasedCharacters[Math.floor(Math.random()*upperCasedCharacters.length)])
 }
-if (userYes[i]==true) {
+if (userYes[2][i]==true) {
   randomPassword.push(numericCharacters[Math.floor(Math.random()*numericCharacters.length)])  
 }
-if (userYes[i]==true) {
+if (userYes[3][i]==true) {
   randomPassword.push(specialCharacters[Math.floor(Math.random()*specialCharacters.length)])
 }
-else if (passWordLength===randomPassword.length) {
+else if (passWordLength==randomPassword.length) {
 alert("Your random password is:   " + randomPassword)
 console.log("Your random password is:   " + randomPassword)  
 break

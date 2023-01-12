@@ -20,6 +20,7 @@ The application currently has the following issues:
 * The application does not always select the right character types selected by the user.
 * The application does not always return the right password length.
 * The application sometimes fails to return any password at all, and does nothing when the prompts are answered by the user.
+* The application will return only one character of the right character type. 
 
 
 ![Screenshot1](https://user-images.githubusercontent.com/117310251/211861662-554546ef-3579-4d97-a44d-0144a0c18481.png)
@@ -27,3 +28,5 @@ The application currently has the following issues:
 ![Screenshot2](https://user-images.githubusercontent.com/117310251/211861668-d10bcec5-4478-434d-abf8-97fa03f4490d.png)
 
 ![Screenshot3](https://user-images.githubusercontent.com/117310251/211861670-7a69fdd5-f39d-4d1d-b47c-846d35b12d0b.png)
+
+![Screenshot5](https://user-images.githubusercontent.com/117310251/212100940-8c2c8b66-9570-4bb1-837e-85f5cf6b718e.png)
